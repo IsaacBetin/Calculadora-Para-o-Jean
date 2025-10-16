@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2b0047;
+}
+
+h1 {
+    color: white;
+}
+
+.calculadora {
+    background-color: white;
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#display {
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    text-align: right;
+    font-size: 20px;
+    margin-bottom: 16px;
+    padding-right: 10px; /* Adicionado para melhor visualização do texto */
+}
+
+.box-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+button {
+    border: none;
+    height: 60px;
+    border-radius: 6px;
+    font-size: 20px;
+    background-color: #f9f9f9;
+}
+
+button:hover{
+    background-color: #e1e1e1;
+    cursor: pointer;
+    transition: .4s;
+}
+
+/* Estilização dos botões de operação e resultado para destacar */
+
+button:nth-child(4n), /* Botões de operação à direita (+, -, *, /) */
+.btn-result {
+    background-color: #5d00a8;
+    color: white;
+}
+
+button:nth-child(4n):hover,
+.btn-result:hover {
+    background-color: #8300eb;
+}
+
+.btn-zero {
+    grid-column: 1/3; /* Ocupa as colunas 1 e 2 */
+}
+
+.btn-result {
+    grid-row: 4/6; /* Ocupa as linhas 4 e 5 */
+    height: 100%; /* Garante que ocupe todo o espaço vertical */
+    grid-column: 4; /* Fica na coluna 4 */
+}
+
+/* Botões de Limpar (C) e Backspace (<) */
+button:nth-child(1), 
+button:nth-child(2) {
+    background-color: #c9c9c9;
+}
+button:nth-child(1):hover,
+button:nth-child(2):hover {
+    background-color: #b0b0b0;
+}
